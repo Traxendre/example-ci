@@ -1,10 +1,10 @@
 pipeline {
   agent any
     stages {
-      stage(’Build’) {
-        	steps { 	sh ’npm install’
-						sh ’npm install grunt-cli’
-						sh ’./node_modules/grunt-cli/bin/grunt’
+      stage('Build') {
+        	steps { 	sh 'npm install'
+						sh 'npm install grunt-cli'
+						sh './node_modules/grunt-cli/bin/grunt'
 			 		}
       }
 		stage('Packaging'){
@@ -15,7 +15,7 @@ pipeline {
 }
 	post {
    		 always {
-    		archiveArtifacts artifacts: ’website.tgz’,
+    		archiveArtifacts artifacts: 'website.tgz',
         fingerprint: true }
 	} 
 
